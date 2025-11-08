@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search - Essenzà Luxe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="icon.jpg.jpeg" />
+  <style>
+    /* Root variables */
+    :root {
+      --bg-light: #fff;
+      --text-light: #000;
+      --bg-dark: #121212;
+      --text-dark: #f5f5f5;
+      --accent: gold;
+    }
+
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    /* Header styling */
+    header.luxury-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode header.luxury-header {
+      background-color: #000;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode .logo {
+      color: var(--text-dark);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    /* Navigation */
+    nav {
+      flex-grow: 1;
+      margin-left: 40px;
+    }
+
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    ul.nav-links li a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--text-light);
+      transition: color 0.3s ease;
+    }
+
+    ul.nav-links li a:hover {
+      color: var(--accent);
+    }
+
+    body.dark-mode ul.nav-links li a {
+      color: var(--text-dark);
+    }
+
+    body.dark-mode ul.nav-links li a:hover {
+      color: var(--accent);
+    }
+
+    /* Header icons */
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--text-light);
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode .header-icons {
+      color: var(--text-dark);
+    }
+
+    .header-icons i {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .header-icons i:hover {
+      color: var(--accent);
+    }
+
+    /* Dark mode toggle button */
+    #darkModeToggle {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    /* Main content below header */
+    main.search-container {
+      margin-top: 100px; /* header height + some spacing */
+      padding: 0 20px 40px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    main.search-container h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Search box */
+    .search-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 12px 18px;
+      font-size: 1rem;
+      border: 2px solid var(--text-light);
+      border-radius: 30px 0 0 30px;
+      outline: none;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .search-box input::placeholder {
+      color: gray;
+    }
+
+    .search-box button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 0 30px 30px 0;
+      background-color: var(--accent);
+      color: black;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .search-box button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    /* Dark mode search input and button */
+    body.dark-mode .search-box input {
+      background-color: var(--bg-dark);
+      border-color: var(--text-dark);
+      color: var(--text-dark);
+    }
+
+    body.dark-mode .search-box input::placeholder {
+      color: #bbb;
+    }
+
+    body.dark-mode .search-box button {
+      background-color: gold;
+      color: black;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header.luxury-header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      ul.nav-links {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      main.search-container h1 {
+        font-size: 1.5rem;
+      }
+
+      .search-box {
+        max-width: 100%;
+        flex-direction: column;
+      }
+
+      .search-box input,
+      .search-box button {
+        width: 100%;
+        border-radius: 30px;
+      }
+
+      .search-box button {
+        margin-top: 15px;
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="luxury-header">
+    <div class="logo">ESSENZÀ <span>LUXE</span></div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index05.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="brands.html">BRANDS</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="about5.html">ABOUT</a></li>
+        <li><a href="contact5.html">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-shopping-cart"></i>
+      <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="search-container">
+    <h1>What are you looking for?</h1>
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search perfumes, brands, or collections..."
+        autocomplete="off"
+      />
+      <button id="searchBtn">Search</button>
+    </div>
+  </main>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById("darkModeToggle");
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      darkToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+
+    // Google search redirect
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    function searchGoogle() {
+      const query = searchInput.value.trim();
+      if (!query) {
+        alert("Please type something to search!");
+        return;
+      }
+      const googleURL = "https://www.google.com/search?q=" + encodeURIComponent(query);
+      window.open(googleURL, "_blank");
+    }
+
+    searchBtn.addEventListener("click", searchGoogle);
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") searchGoogle();
+    });
+  </script>
+</body>
+</html>

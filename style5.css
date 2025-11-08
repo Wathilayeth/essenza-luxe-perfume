@@ -1,0 +1,747 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: white;
+  color: black;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+
+/* ===== Main Content ===== */
+#main-content {
+  opacity: 0;
+  animation: showContent 0s ease forwards;
+  animation-delay: 4s; /* Wait for loader to finish */
+}
+
+@keyframes showContent {
+  to { opacity: 1; }
+}
+
+/* ===== Header ===== */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: black;
+  padding: 15px 50px;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: grey;
+}
+
+.header-icons img {
+  width: 22px;
+  margin-left: 15px;
+}
+
+main.content {
+  text-align: center;
+  padding: 60px 20px;
+  color: #000;
+  background: white;
+  min-height: 100vh;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media screen and (max-width: 600px) {
+  .slideshow {
+    height: 300px; /* Reduce slideshow height for mobile */
+  }
+
+  .top-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .main-nav ul li {
+    margin: 5px 0;
+  }
+
+  .header-icons {
+    margin-top: 10px;
+  }
+
+  .header-icons img {
+    margin-left: 10px;
+    width: 20px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  main.content h2 {
+    font-size: 1.5rem;
+  }
+
+  main.content p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
+
+.product-showcase {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.product-showcase h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.categories button {
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.categories button:hover {
+  background: grey;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.product-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ===== Scroll-Reveal Header ===== */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  transition: top 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.top-header.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Style only for the slider page */
+.slider-section {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  min-height: 100vh;
+}
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 0 10px;
+  flex: 0 0 250px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.details {
+  padding: 15px;
+  text-align: center;
+}
+
+.details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.details p {
+  font-size: 14px;
+  color: #888;
+  margin: 5px 0;
+}
+
+.details span {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 45%;
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+button.prev:hover, button.next:hover {
+  background-color: #f0f0f0;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.perfume-strip {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.perfume-strip img {
+    width: 33.333%;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.site-footer {
+  background-color: #000;  /* solid black background */
+  color: #fff;             /* white text */
+  padding: 40px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-contact p,
+.footer-description p,
+.footer-links p {
+  margin: 8px 0;
+  color: white;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
+
+
+.site-footer strong {
+  color: #fff;
+}
+
+
+/* 🌐 Floating AI Assistant Icon */
+.ai-assistant-icon1 {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.2s ease;
+}
+
+.ai-assistant-icon1:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-photo1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* 💬 Chatbot Box */
+#chatbot1 {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 320px;
+  height: 420px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.chat-header1 {
+  background: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+#closeChat1 {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.chat-body1 {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message1 {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.user-message1 {
+  background: black;
+  color: white;
+  align-self: flex-end;
+}
+
+.bot-message1 {
+  background: #ddd;
+  color: #111;
+  align-self: flex-start;
+}
+
+/* "Thinking..." animation */
+.thinking1 {
+  font-style: italic;
+  opacity: 0.7;
+  align-self: flex-start;
+  background: #ddd;
+  color: #111;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+.chat-footer1 {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chat-footer1 input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+.chat-footer1 button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 30px;
+}
+
+/* Main content area */
+.content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.box-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.box h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+/* Sidebar styling */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content, .sidebar {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 30px;
+  transition: background 0.3s;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Button style */
+#darkModeToggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Light Mode */
+body {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.box {
+  background-color: #f5f5f5;
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  transition: all 0.3s ease;
+}
+
+/* 🌙 DARK MODE STYLES */
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Make all sections, containers, boxes, and cards dark */
+body.dark-mode .top-header,
+body.dark-mode .categories,
+body.dark-mode .card,
+body.dark-mode .box,
+body.dark-mode .content,
+body.dark-mode .sidebar,
+body.dark-mode .chat-body1,
+body.dark-mode .slider-section,
+body.dark-mode .perfume-strip,
+body.dark-mode .photo-collection,
+body.dark-mode footer,
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .container {
+  background-color: #000;
+  color: #fff;
+  border-color: #333;
+}
+
+/* Brand name and links */
+body.dark-mode .brand-name {
+  color: #fff;
+}
+body.dark-mode .main-nav a {
+  color: #fff;
+}
+body.dark-mode .main-nav a:hover {
+  color: #ccc;
+}
+
+/* Header icons (search/cart) */
+body.dark-mode .header-icons img {
+  filter: invert(1); /* make icons white */
+}
+
+/* Buttons, Inputs, and Chatbot */
+body.dark-mode button,
+body.dark-mode input,
+body.dark-mode .chat-footer1 input {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #555;
+}
+body.dark-mode button:hover {
+  background-color: #222;
+}
+
+/* Footer */
+body.dark-mode .site-footer {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Headings */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6,
+body.dark-mode p, 
+body.dark-mode span {
+  color: #fff;
+}
+
+/* fix top branded product slider text */
+body.dark-mood .split-heading,
+body.dark-mode .split-heading .slim,
+body.dark-mode .split-heading .bold,
+body.dark-mode .search h3,
+body.dark-mode .categories h3,
+body.dark-mode .categories ul li,
+body.dark-mode .categories ul li a {
+  color: #fff !important;
+}
+
+body.dark-mode .search,
+body.dark-mode .categories {
+  background-color: #000;
+  border: 1px solid #333;
+}
+
+body.dark-mode .search input {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .categories button {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .categories button:hover {
+  background-color: #222;
+}
+
+/* Dark mode smooth transition */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, filter 0.4s ease;
+}
+/* dark mood end */
+
+
+/* CSS */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background-color: #fefefe;
+}
+
+.video-section video {
+  width: 90%;
+  max-width: 230px;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.photo-collection {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.photo-card {
+  width: 200px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photo-card img:hover {
+  transform: scale(1.05);
+}
+
+.photo-card h3 {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #333;
+}

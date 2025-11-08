@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essenzà Luxe</title>
+  <link rel="icon" href="icon.jpg.jpeg">
+  <link rel="stylesheet" href="style5.css" />
+  <style>
+.slideshow {
+  position: relative;
+  width: cover; /* Adjust as needed */
+  height: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.split-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.split-heading .slim {
+  font-weight: 300; /* Light */
+  color: #444;
+}
+
+.split-heading .bold {
+  font-weight: 700; /* Bold */
+  color: #1a1a1a;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 32s infinite;
+}
+
+.slideshow img:nth-child(1) {
+  animation-delay: 0s;
+}
+.slideshow img:nth-child(2) {
+  animation-delay: 8s;
+}
+.slideshow img:nth-child(3) {
+  animation-delay: 16s;
+}
+.slideshow img:nth-child(4) {
+  animation-delay: 24s;
+}
+
+ @keyframes fade {
+  0%   { opacity: 1; }
+  25%  { opacity: 1; }
+  50%  { opacity: 0; }
+  75%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+</style>
+</head>
+<body>
+
+
+<div id="main-content">
+  <header class="top-header">
+    <div class="brand-name">ESSENZÀ LUXE</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index05.html">HOME</a></li>
+          <li><a href="shop.html">SHOP</a></li>
+          <li><a href="brands.html">BRANDS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blog.html">BLOG</a></li>
+          <li><a href="about5.html">ABOUT US</a></li>
+          <li><a href="contact5.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    <div class="header-icons">
+      <a href="search.html"><img src="search5.jpg" alt="search" /></a>
+      <a href="addtocart.html"><img src="addtocart.jpg" alt="add to cart" /></a>
+      <a><button id="darkModeToggle">🌙</button></a>
+    </div>
+    </header>
+
+    <div class="slideshow">
+    <img src="perfume01.jpg" alt="Photo 1">
+    <img src="perfume02.jpg" alt="Photo 2">
+    <img src="perfume03.jpg" alt="Photo 3">
+    <img src="perfume04.jpg" alt="Photo 4">
+  </div><br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  </main>
+    <h2 class="split-heading">
+  <span class="slim">TOP BRANDED</span> <span class="bold">PRODUCTS</span>
+    </h2>
+  <br>
+  <br>
+
+  <div class="categories">
+    <button href="newarrival.html">New Arrivals</button>|
+    <button href="mensproduct.html">Men's</button>|
+    <button href="womensproduct.html">Women's</button>|
+    <button href="ultra.html">Ultra Niche</button>
+  </div>
+  <br>
+  <br>
+
+ <script>
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector(".top-header");
+    if (window.scrollY > 100) {
+      header.classList.add("visible");
+    } else {
+      header.classList.remove("visible");
+    }
+    });
+ </script>
+
+ <section class="slider-section">
+  <div class="slider-container">
+   <button class="prev">&#10094;</button>
+     <div class="slider">
+        <div class="card">
+          <img src="pf01,jpg.jpeg" alt="Perfume 1">
+          <div class="details">
+            <h3>MANCER'S CRDITT</h3>
+            <p>new Arrival</p>
+            <span>LKR. 7,500.00</span>
+        </div>
+      </div>
+
+       <div class="card">
+        <img src="pf02.jpg.jpeg" alt="Perfume 2">
+          <div class="details">
+            <h3>PARTUNSS NAMEDI</h3>
+            <p>new Arrival</p>
+            <span>LKR. 8,OOO.OO</span>
+          </div>
+      </div>
+
+       <div class="card">
+        <img src="pf03.jpg.jpeg" alt="Perfume 3">
+          <div class="details">
+            <h3>LARTAPA'S</h3>
+            <p>0.0 fi/160</p>
+            <span>LKR. 6,000.00</span>
+          </div>
+      </div>
+
+        <div class="card">
+          <img src="pf04.jpg.jpeg" alt="Perfume 3">
+            <div class="details">
+              <h3>MANCER'S AND TOEACCO</h3>
+              <p>rose perfume</p>
+              <span>LKR. 12,000.00</span>
+            </div>
+        </div>
+
+         <div class="card">
+          <img src="pf05.jpg.jpeg" alt="Perfume 3">
+          <div class="details">
+            <h3>KAYALL'S DF J YU</h3>
+            <p>most popular</p>
+            <span>LKR. 14,000.00</span>
+          </div>
+        </div>
+
+         <div class="card">
+          <img src="pf06.jpg.jpeg" alt="Perfume 3">
+          <div class="details">
+            <h3>TOM FORD'S NOIR DE</h3>
+            <p>velvet babefirol</p>
+            <span>LKR. 20,000.00</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="pf07.jpg.jpeg" alt="Perfume 3">
+          <div class="details">
+            <h3>MAISON MARCIELA'S</h3>
+            <p>replica perfume</p>
+            <span>LKR. 5'500.00</span>
+          </div>
+        </div>
+
+         <div class="card">
+          <img src="pf08.jpg.jpeg" alt="Perfume 3">
+          <div class="details">
+            <h3>CHANFL S BLE DE</h3>
+            <p>agrrist 444</p>
+            <span>LKR. 4'500.00</span>
+          </div>
+        </div>
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+<!--dark mood function-->
+ <script>
+  const toggle = document.getElementById("darkModeToggle");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+ </script>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    const slideTimer = 5000;
+
+    next.addEventListener('click', () => {
+      slider.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+
+    prev.addEventListener('click', () => {
+      slider.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+
+    setInterval(() => {
+      slider.scrollBy({ left: 300, behavior: 'smooth' });
+      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    }, slideTimer);
+  </script>
+
+  <div class="ai-assistant-icon1" id="chatbotToggle1" title="AI Assistant">
+    <img src="icon.jpg.jpeg" alt="AI Assistant" class="chatbot-photo1">
+  </div>
+
+  <div id="chatbot1">
+    <div class="chat-header1">
+      AI Assistant
+      <span id="closeChat1">&times;</span>
+    </div>
+    <div class="chat-body1" id="chatBody1"></div>
+    <div class="chat-footer1">
+      <input type="text" id="userInput1" placeholder="Type a message...">
+      <button id="sendBtn1">Send</button>
+    </div>
+  </div>
+
+ <script src="script.js"></script>
+
+ <section class="perfume-strip">
+    <img src="rawpf01.jpg.jpeg" alt="perfume dill">
+    <img src="rawpf02.jpg.jpeg" alt="same as drginal">
+    <img src="rawpf03.jpg.jpeg" alt="lasts longer">
+</section><br>
+<br>
+<br>
+<br>
+<br>
+
+ <div class="container">
+    <main class="content">
+      <section class="box">
+        <img src="50discount.jpg.png" alt="perfume" class="box-image">
+        <h2>50% EXCLUSIVE OFFERS</h2>
+        <p>Understanding your personality and preferences is key to choosing the right cologne. Whether you prefer a fresh, woody, or spicy scent, there's a fragrance out there that matches your style.</p>
+      </section>
+      <section class="box">
+        <img src="refillbottle1.png" alt="Seasonal fragrance display" class="box-image">
+        <h2>REFILL YOUR OLD BOTTLE</h2>
+        <p>Consider the occasion, season, and your own body chemistry when selecting a cologne. Lighter scents work well for daytime and summer, while deeper notes suit evening and winter wear.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="search">
+        <h3>SEARCH</h3>
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="categories">
+        <h3>CATEGORIES</h3>
+        <ul>
+          <li>Fragrance Tips</li>
+          <li>Luxury Picks</li>
+          <li>Seasonal Scents</li>
+          <li>Floral</li>
+          <li>Oriental</li>
+          <li>Woody</li>
+          <li>Fresh</li>
+          <li>Fruity</li>
+          <li>Citrus</li>
+          <li>Gourmand</li>
+          <li>Aquatic</li>
+          <li>Green</li>
+          <li>Aromatic</li>
+          <li>Spicy</li>
+          <li>Chypre</li>
+          <li>Leather</li>
+          <li>Amber</li>
+          <li>Musk</li>
+          <li>Powdery</li>
+          <li>Sweet</li>
+          <li>Floral Fruity</li>
+          <li>Floral Woody</li>
+          <li>Woody Spicy</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+<section class="video-section">
+  <video autoplay muted loop playsinline>
+    <source src="videograph.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video autoplay muted loop playsinline>
+    <source src="videograph.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video autoplay muted loop playsinline>
+    <source src="videograph.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video autoplay muted loop playsinline>
+    <source src="videograph.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+<br>
+<br>
+
+<section class="photo-collection">
+  <div class="photo-card">
+    <img src="kid.jpg.png" alt="Kids Collection">
+    <h3>Kids section</h3>
+  </div>
+
+  <div class="photo-card">
+    <img src="gift.jpg.png" alt="Gifts Collection">
+    <h3>Gifts collection</h3>
+  </div>
+
+  <div class="photo-card">
+    <img src="women.jpg.png" alt="Women Collection">
+    <h3>Women section</h3>
+  </div>
+
+  <div class="photo-card">
+    <img src="men.jpg.png" alt="Men Collection">
+    <h3>Men section</h3>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-contact">
+      <p><strong>Contact Us</strong></p>
+      <p>+94 777 58 87 78</p>
+      <p>Essenzà Luxe Studio, Colombo, Sri Lanka</p>
+      <p>Store Hours: 10:00am – 7:30pm</p>
+    </div>
+
+    <div class="footer-description">
+      <p><strong>Essenzà Luxe</strong></p>
+      <p>Crafting sensory elegance through bespoke perfume visuals and luxury scent storytelling. Designed to evoke emotion, curated to inspire.</p>
+    </div>
+
+    <div class="footer-links">
+      <p><strong>Explore</strong></p>
+      <p><a href="about5.html">About</a> | <a href="faq.html">FAQ</a> | <a href="contact5.html">Contact</a></p>
+      <p><a href="privacy.html">Privacy Policy</a> | <a href="returns.html">Returns</a> | <a href="terms.html">Terms</a></p>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="perfume.jpg.jpeg" alt="perfume" style="width:100px; height:100px;">
+  </div>
+  <div style="text-align: center;">
+    <p style="color: white;">Essenzà Luxe</p>
+  </div><br>
+  <div style="text-align: center;">
+    <p style="color: white;">2025. All rights reserved | Designed by Wathila Yethmal</p>
+  </div>
+</footer>
+</body>
+</html>

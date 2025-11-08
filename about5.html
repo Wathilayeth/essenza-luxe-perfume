@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+     <link rel="icon" href="icon.jpg.jpeg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="about5.css" />
+  <title>Essenzà Luxe</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Google Font for elegance -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="luxury-header">
+    <div class="logo">ESSENZÀ <span>LUXE</span></div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index05.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="brands.html">BRANDS</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="about5.html">ABOUT US</a></li>
+        <li><a href="contact5.html">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <a href="search.html" class="icon"><i class="fas fa-search"></i></a>
+      <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+       <!-- Dark mode toggle -->
+      <a><button id="darkModeToggle">🌙</button></a>
+    </div>
+  </header>
+
+  <header class="header">
+    <img src="perfume01.jpg" alt="hader image" class="header-img" />
+  </header><br>
+  <br>
+  <br>
+
+  <!-- Page content for scroll testing -->
+  <main>
+    <section style="padding: 60px;">
+    </section>
+  </main>
+
+  <!-- Scroll behavior script -->
+  <script>
+    let lastScrollTop = 0;
+    const header = document.querySelector('.luxury-header');
+
+    window.addEventListener('scroll', function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
+
+  <style>
+.who-we-are {
+  background: #f8f5f2;
+  padding: 60px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #3a2f2f;
+  text-align: center;
+}
+
+.who-container {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.who-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.who-text h2 {
+  font-size: 2.4em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.who-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Scroll Reveal Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .who-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .who-text {
+    flex: 1;
+    padding-left: 40px;
+  }
+}
+
+.reviews {
+  background: #fdfaf7;
+  padding: 60px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #3a2f2f;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.review-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.review-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  max-width: 300px;
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.quote {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #7a5c5c;
+}
+
+.body {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.author {
+  font-style: italic;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.85em;
+  color: #4caf50;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .review-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  color: white;
+}
+
+/* Header styling */
+.luxury-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  background-color:white;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.luxury-header.hide {
+  top: -100px; /* Adjust based on header height */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+nav {
+  flex-grow: 1;
+  margin-left: 60px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: grey;
+}
+
+/* Icon styling */
+.header-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.header-icons .icon {
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-icons .icon:hover {
+  color: gray;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .luxury-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  nav {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .header-icons {
+    margin-top: 15px;
+  }
+}
+
+.header {
+    width: 100%;
+    overflow: hidden;
+}
+.header img {
+    width: 100%;
+    height: 600px;
+    display: block;
+    object-fit: cover;
+}
+
+.site-footer {
+  background-color: #000;  /* solid black background */
+  color: #fff;             /* white text */
+  padding: 40px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-contact p,
+.footer-description p,
+.footer-links p {
+  margin: 8px 0;
+  color: white;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
+
+
+.site-footer strong {
+  color: #fff;
+}
+
+/* 🌙 DARK MODE STYLES */
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Make all sections, containers, boxes, and cards dark */
+body.dark-mode .top-header,
+body.dark-mode .categories,
+body.dark-mode .card,
+body.dark-mode .box,
+body.dark-mode .content,
+body.dark-mode .sidebar,
+body.dark-mode .chat-body1,
+body.dark-mode .slider-section,
+body.dark-mode .perfume-strip,
+body.dark-mode .photo-collection,
+body.dark-mode footer,
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .container {
+  background-color: #000;
+  color: #fff;
+  border-color: #333;
+}
+
+/* Brand name and links */
+body.dark-mode .brand-name {
+  color: #fff;
+}
+body.dark-mode .main-nav a {
+  color: #fff;
+}
+body.dark-mode .main-nav a:hover {
+  color: #ccc;
+}
+
+/* Header icons (search/cart) */
+body.dark-mode .header-icons img {
+  filter: invert(1); /* make icons white */
+}
+
+/* Buttons, Inputs, and Chatbot */
+body.dark-mode button,
+body.dark-mode input,
+body.dark-mode .chat-footer1 input {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #555;
+}
+body.dark-mode button:hover {
+  background-color: #222;
+}
+
+/* Footer */
+body.dark-mode .site-footer {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Headings */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6,
+body.dark-mode p, 
+body.dark-mode span {
+  color: #fff;
+}
+
+/* fix top branded product slider text */
+body.dark-mood .split-heading,
+body.dark-mode .split-heading .slim,
+body.dark-mode .split-heading .bold,
+body.dark-mode .search h3,
+body.dark-mode .categories h3,
+body.dark-mode .categories ul li,
+body.dark-mode .categories ul li a {
+  color: #fff !important;
+}
+
+body.dark-mode .search,
+body.dark-mode .categories {
+  background-color: #000;
+  border: 1px solid #333;
+}
+
+body.dark-mode .search input {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .categories button {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .categories button:hover {
+  background-color: #222;
+}
+
+/* Dark mode smooth transition */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, filter 0.4s ease;
+}
+
+body.dark-mode .luxury-header {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+/* Logo text inside header */
+body.dark-mode .luxury-header .logo,
+body.dark-mode .luxury-header .logo span {
+  color: #fff;
+}
+
+/* Nav links */
+body.dark-mode .luxury-header nav a {
+  color: #fff;
+}
+body.dark-mode .luxury-header nav a:hover {
+  color: #ccc;
+}
+
+/* Header icons */
+body.dark-mode .luxury-header .header-icons a i {
+  color: #fff;
+}
+body.dark-mode .luxury-header .header-icons a i:hover {
+  color: #ccc;
+}
+
+/* === Dark Mode: Reviews & Who We Are fixes === */
+body.dark-mode .reviews {
+  background-color: #000;
+  color: #fff;
+}
+
+body.dark-mode .review-grid {
+  gap: 24px;
+}
+
+body.dark-mode .review-card {
+  background-color: #0f0f10; /* dark card */
+  color: #fff;
+  border: 1px solid #222;
+  box-shadow: 0 6px 18px rgba(255,255,255,0.03);
+  padding: 28px;
+}
+
+body.dark-mode .review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .quote {
+  color: #f5d36b; /* elegant gold highlight */
+}
+
+body.dark-mode .badge {
+  color: #9fe4a6; /* soft green */
+  font-weight: bold;
+}
+
+/* Who we are tweaks */
+body.dark-mode .who-we-are {
+  background-color: #000;
+  color: #fff;
+}
+body.dark-mode .who-text h2 {
+  color: #f5d36b;
+}
+body.dark-mode .who-photo {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+/* dark mood end */
+
+
+</style>
+
+  <!-- WHO WE ARE SECTION -->
+<section class="who-we-are">
+  <div class="who-container">
+    <img src="cutperfume1.jpg.png" alt="Essenzà Luxe Team" class="who-photo" />
+    <div class="who-text">
+      <h2>Who We Are</h2>
+      <p>
+        At <strong>Essenzà Luxe</strong>, we craft sensory elegance through curated fragrances and immersive design.
+        Our mission is to evoke emotion, memory, and beauty in every bottle. With a passion for storytelling and
+        a commitment to refinement, we blend artistry and innovation to create timeless olfactory experiences.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER REVIEWS SECTION -->
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+  <div class="review-grid">
+    <div class="review-card">
+      <p class="quote">“Smells better than high-end designer perfumes!”</p>
+      <p class="body">
+        I've tried so many fragrances over the years, but nothing has the same staying power as Bujarriim.
+        The scent lasts all day and I constantly get compliments—definitely my new go-to.
+      </p>
+      <p class="author">Jessica R., Sydney</p>
+      <span class="badge">✔ VERIFIED GOOGLE REVIEW</span>
+    </div>
+
+    <div class="review-card">
+      <p class="quote">“Luxury without the hefty price tag.”</p>
+      <p class="body">
+        I love everything about the quality of these perfumes. They smell absolutely divine, feel expensive,
+        and the fact that they're made right here in Australia is a huge plus.
+      </p>
+      <p class="author">Daniel K., Melbourne</p>
+      <span class="badge">✔ VERIFIED GOOGLE REVIEW</span>
+    </div>
+
+    <div class="review-card">
+      <p class="quote">“Obsessed with the perfume oils!”</p>
+      <p class="body">
+        The perfume oils are next level. They're rich, smooth, and honestly I can't stop buying more.
+        I keep one in my bag at all times for touch-ups.
+      </p>
+      <p class="author">Layla A., Brisbane</p>
+      <span class="badge">✔ VERIFIED GOOGLE REVIEW</span>
+    </div>
+  </div>
+</section>
+
+<!--dark mood-->
+<script>
+  const toggle = document.getElementById("darkModeToggle");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
+</script>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-contact">
+      <p><strong>Contact Us</strong></p>
+      <p>+94 777 58 87 78</p>
+      <p>Essenzà Luxe Studio, Colombo, Sri Lanka</p>
+      <p>Store Hours: 10:00am – 7:30pm</p>
+    </div>
+
+    <div class="footer-description">
+      <p><strong>Essenzà Luxe</strong></p>
+      <p>Crafting sensory elegance through bespoke perfume visuals and luxury scent storytelling. Designed to evoke emotion, curated to inspire.</p>
+    </div>
+
+    <div class="footer-links">
+      <p><strong>Explore</strong></p>
+      <p><a href="about5.html">About</a> | <a href="faq.html">FAQ</a> | <a href="contact5.html">Contact</a></p>
+      <p><a href="privacy.html">Privacy Policy</a> | <a href="returns.html">Returns</a> | <a href="terms.html">Terms</a></p>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="perfume.jpg.jpeg" alt="perfume" style="width:100px; height:100px;">
+  </div>
+  <div style="text-align: center;">
+    <p style="color: white;">Essenzà Luxe</p>
+  </div><br>
+  <div style="text-align: center;">
+    <p style="color: white;">2025. All rights reserved | Designed by Wathila Yethmal</p>
+  </div>
+</footer>
+</body>
+</html>
